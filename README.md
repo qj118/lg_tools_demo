@@ -15,3 +15,4 @@
 
 - Install python 2.7
 - Install selenium `pip install -U selenium`
+- Download [chromedriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) file and add it to system path.
