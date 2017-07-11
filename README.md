@@ -16,3 +16,16 @@
 - Install python 2.7
 - Install selenium `pip install -U selenium`
 - Download [chromedriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) file and add it to system path.
+
+## Key Issue Check - UI
+
+### How to use it?
+
+- `python keyIssueCheck_UI.py`
+
+### Installation Guide
+
+- Install python 3.5
+- Install selenium `pip install -U selenium`
+- Download [chromedriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) file and add it to system path.
+- Install PyQt5 `pip install PyQt5`
