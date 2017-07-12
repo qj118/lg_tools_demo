@@ -83,9 +83,11 @@ class ShowWindow(QtWidgets.QWidget):
 
 		self.label_author = QtWidgets.QLabel("Developer: Qu Jin")
 		self.label_contact = QtWidgets.QLabel("Email: jin.qu@lge.com")
+		self.label_version = QtWidgets.QLabel("Version: 1.0.0")
 		layout_copyright = QtWidgets.QHBoxLayout()
 		layout_copyright.addWidget(self.label_author)
 		layout_copyright.addWidget(self.label_contact)
+		layout_copyright.addWidget(self.label_version)
 
 		layout = QtWidgets.QVBoxLayout()
 		layout.addLayout(layout_web)
@@ -145,7 +147,13 @@ class ShowWindow(QtWidgets.QWidget):
 			options.add_argument("--user-data-dir=C:/Users/Administrator/AppData/Local/Google/Chrome/User Data/Default")
 			browser = webdriver.Chrome(chrome_options = options)
 			browser.get(destination)
-			time.sleep(3)
+			try:
+				ad = browser.find_element_by_xpath('//*[@id="loginForm"]/table/tbody/tr[1]/td[3]/input')
+				QtWidgets.QMessageBox.information(self, "Warning", "Default configuration has no user information, please log in.")
+				browser.close()
+				return
+			except NoSuchElementException:
+				time.sleep(3)
 		else: # command log in
 			browser = webdriver.Chrome(chrome_options = options)
 			browser.get(destination)
@@ -162,6 +170,7 @@ class ShowWindow(QtWidgets.QWidget):
 			time.sleep(3)
 		except NoSuchElementException:
 			QtWidgets.QMessageBox.information(self, "Warning", "You are not the board manager.")
+			browser.close()
 			return
 
 		# click "Key Issue Manager" button
@@ -194,6 +203,7 @@ class ShowWindow(QtWidgets.QWidget):
 
 			except NoSuchElementException as e:
 				QtWidgets.QMessageBox.information(self, "Done", "Success!")
+				browser.close()
 				break
 
 		time.sleep(10)
