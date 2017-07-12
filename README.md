@@ -29,3 +29,4 @@
 - Install selenium `pip install -U selenium`
 - Download [chromedriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) file and add it to system path.
 - Install PyQt5 `pip install PyQt5`
+- If you want to change "py" to "exe" file by pyinstaller, use command `pyinstaller keyIssueCheck_UI.py -w`. And there will be some warnings(lib not found), and you should find them in your python folder, and copy these files to the dist folder which generate after forward command. Then, the exe file can be used.
