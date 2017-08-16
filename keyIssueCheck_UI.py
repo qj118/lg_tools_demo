@@ -83,7 +83,7 @@ class ShowWindow(QtWidgets.QWidget):
 
 		self.label_author = QtWidgets.QLabel("Developer: Qu Jin")
 		self.label_contact = QtWidgets.QLabel("Email: jin.qu@lge.com")
-		self.label_version = QtWidgets.QLabel("Version: 1.0.0")
+		self.label_version = QtWidgets.QLabel("Version: 1.0.1")
 		layout_copyright = QtWidgets.QHBoxLayout()
 		layout_copyright.addWidget(self.label_author)
 		layout_copyright.addWidget(self.label_contact)
@@ -197,7 +197,7 @@ class ShowWindow(QtWidgets.QWidget):
 					comment = browser.find_element_by_xpath('//*[@id="issueResultForm"]/div[2]/table/tbody/tr[%d]/td[6]/table/tbody/tr[1]/td[3]/table/tbody/tr[2]/td[1]/textarea' % i)
 					comment.send_keys(comment_text)
 					browser.find_element_by_xpath('//*[@id="issueResultForm"]/div[2]/table/tbody/tr[%d]/td[6]/table/tbody/tr[1]/td[3]/table/tbody/tr[2]/td[2]/input' % i).click()
-					browser.find_element_by_xpath('//*[@id="issueResultForm"]/div[2]/table/tbody/tr[%d]/td[7]/input[3]' % i).click()
+					browser.find_element_by_xpath('//*[@id="issueResultForm"]/div[2]/table/tbody/tr[%d]/td[8]/input[3]' % i).click()
 
 				i = i + 1
 
