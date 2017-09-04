@@ -42,12 +42,14 @@ class ShowWindow(QtWidgets.QWidget):
 		self.radio4 = QtWidgets.QRadioButton("S/W Event")
 		self.radio5 = QtWidgets.QRadioButton("Pre")
 		self.radio6 = QtWidgets.QRadioButton("Test")
+		self.radio7 = QtWidgets.QRadioButton("Etc")
 		self.radio1.setChecked(False)
 		self.radio2.setChecked(True)
 		self.radio3.setChecked(False)
 		self.radio4.setChecked(False)
 		self.radio5.setChecked(False)
 		self.radio6.setChecked(False)
+		self.radio7.setChecked(False)
 		radio_layout = QtWidgets.QHBoxLayout()
 		radio_layout.addWidget(self.radio1)
 		radio_layout.addWidget(self.radio2)
@@ -55,6 +57,7 @@ class ShowWindow(QtWidgets.QWidget):
 		radio_layout.addWidget(self.radio4)
 		radio_layout.addWidget(self.radio5)
 		radio_layout.addWidget(self.radio6)
+		radio_layout.addWidget(self.radio7)
 		self.groupBox_comment.setLayout(radio_layout)
 
 		layout_comment_1 = QtWidgets.QVBoxLayout()
@@ -116,6 +119,8 @@ class ShowWindow(QtWidgets.QWidget):
 			comment_choose = "5"
 		if(self.radio6.isChecked()):
 			comment_choose = "6"
+		if(self.radio7.isChecked()):
+			comment_choose = "7"
 		return comment_choose
 
 	def getSecurityFlag(self):
